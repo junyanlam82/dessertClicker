@@ -26,6 +26,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ShareCompat
 import androidx.databinding.DataBindingUtil
 import com.example.android.dessertclicker.databinding.ActivityMainBinding
+import timber.log.Timber
+
 const val TAG = "MainActivity"
 const val KEY_REVENUE = "revenue_key"
 const val KEY_DESSERT_SOLD = "dessert_sold_key"
@@ -66,33 +68,35 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart Called")
+        Timber.i("onCreate called")
     }
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, "onResume Called")
+        Timber.i("onResume Called")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, "onPause Called")
+        Timber.i("onPause Called")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, "onStop Called")
+        Timber.i("onStop Called")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, "onDestroy Called")
+        Timber.i("onDestroy Called")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.d(TAG, "onRestart Called")
+        Timber.i("onRestart Called")
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("MainActivity", "onCreate Called")
         Log.d("MainActivity", "onCreate Called")
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
